@@ -73,30 +73,30 @@ export function UI() {
   }
 
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden font-sans">
+    <div className="absolute inset-0 pointer-events-none overflow-hidden font-sans animate-fade-in">
       {/* Bottom Left: Achievements Panel */}
-      <div className="absolute bottom-6 left-6 bg-black/60 backdrop-blur-md p-5 rounded-2xl shadow-2xl border border-white/10 w-64 pointer-events-auto">
+      <div className="absolute bottom-6 left-6 bg-black/60 backdrop-blur-md p-5 rounded-2xl shadow-2xl border border-white/10 w-64 pointer-events-auto animate-slide-up">
         <h3 className="font-bold text-white mb-2 uppercase text-xs tracking-widest text-gray-400">Active Achievements</h3>
         <ul className="space-y-2">
-          <li className="text-sm text-green-400 flex items-center gap-2"><span>✓</span> Master of Talking</li>
-          <li className="text-sm text-green-400 flex items-center gap-2"><span>✓</span> Food Hunter Lvl 99</li>
-          <li className="text-sm text-green-400 flex items-center gap-2"><span>✓</span> Avoided College</li>
+          <li className="text-sm text-green-400 flex items-center gap-2 transition hover:scale-105 origin-left"><span>✓</span> Master of Talking</li>
+          <li className="text-sm text-green-400 flex items-center gap-2 transition hover:scale-105 origin-left"><span>✓</span> Food Hunter Lvl 99</li>
+          <li className="text-sm text-green-400 flex items-center gap-2 transition hover:scale-105 origin-left"><span>✓</span> Avoided College</li>
         </ul>
       </div>
 
       {/* Bottom Right: Speedometer */}
-      <div className="absolute bottom-6 right-6 bg-black/60 backdrop-blur-md p-5 rounded-2xl shadow-2xl border border-cyan-500/20 pointer-events-auto hover:bg-black/80 transition min-w-[160px] flex flex-col items-center justify-center">
+      <div className="absolute bottom-6 right-6 bg-black/60 backdrop-blur-md p-5 rounded-2xl shadow-[0_0_20px_rgba(0,255,204,0.1)] border border-cyan-500/20 pointer-events-auto hover:bg-black/80 hover:shadow-[0_0_30px_rgba(0,255,204,0.3)] transition-all duration-300 min-w-[160px] flex flex-col items-center justify-center animate-slide-up" style={{ animationDelay: '0.1s' }}>
         <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Speedometer</p>
         <div className="flex items-baseline gap-1">
-          <span className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400 drop-shadow-[0_0_10px_rgba(0,255,204,0.5)]">
+          <span className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400 drop-shadow-[0_0_15px_rgba(0,255,204,0.6)]">
             {Math.round(Math.abs(currentSpeed) * 8)}
           </span>
           <span className="text-xs font-bold text-gray-400 font-mono">km/h</span>
         </div>
         {/* Speed meter bar */}
-        <div className="w-full bg-slate-800 h-1.5 rounded-full mt-3 overflow-hidden">
+        <div className="w-full bg-slate-800 h-1.5 rounded-full mt-3 overflow-hidden shadow-[inset_0_1px_3px_rgba(0,0,0,0.5)]">
           <div 
-            className="bg-gradient-to-r from-cyan-400 to-emerald-400 h-full transition-all duration-100" 
+            className="bg-gradient-to-r from-cyan-400 to-emerald-400 h-full transition-all duration-100 shadow-[0_0_10px_rgba(0,255,204,0.8)]" 
             style={{ width: `${Math.min(100, (Math.round(Math.abs(currentSpeed) * 8) / 80) * 100)}%` }}
           />
         </div>
